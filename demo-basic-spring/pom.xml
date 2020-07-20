@@ -14,7 +14,7 @@
         <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
     </properties>
 
-    <artifactId>demo-basic-spring</artifactId>
+    <artifactId>tc-demo-spring</artifactId>
 
     <dependencyManagement>
         <dependencies>

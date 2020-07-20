@@ -19,6 +19,8 @@
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <slf4j-simple.version>1.7.25</slf4j-simple.version>
         <testcontainers.version>1.14.3</testcontainers.version>
+        <ojdbc8.version>12.2.0.1</ojdbc8.version>
+        <postgresql.version>42.2.2</postgresql.version>
     </properties>
 
     <dependencyManagement>
@@ -45,6 +47,18 @@
                 <version>${mysql-connector-java.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>oracle-xe</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${testcontainers.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
@@ -66,12 +80,23 @@
                 <version>${junit.jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>com.oracle.jdbc</groupId>
+                <artifactId>ojdbc8</artifactId>
+                <version>${ojdbc8.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
         <module>demo-jdbc</module>
         <module>demo-basic-spring</module>
+        <module>demo-spring</module>
     </modules>
 
     <build>
