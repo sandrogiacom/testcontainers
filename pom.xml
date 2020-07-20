@@ -10,10 +10,14 @@
     <packaging>pom</packaging>
 
     <properties>
+        <assertj-core.version>3.16.1</assertj-core.version>
         <java.version>11</java.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
+        <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <slf4j-simple.version>1.7.25</slf4j-simple.version>
         <testcontainers.version>1.14.3</testcontainers.version>
     </properties>
 
@@ -26,19 +30,34 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>mysql</artifactId>
+                <version>${testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>jdbc</artifactId>
+                <version>${testcontainers.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.25</version>
+                <version>${slf4j-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
-                <version>1.7.25</version>
+                <version>${slf4j-simple.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
-                <version>3.16.1</version>
+                <version>${assertj-core.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -49,6 +68,11 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <modules>
+        <module>demo-jdbc</module>
+        <module>demo-basic-spring</module>
+    </modules>
 
     <build>
         <plugins>
