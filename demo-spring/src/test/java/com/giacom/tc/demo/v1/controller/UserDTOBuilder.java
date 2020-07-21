@@ -2,37 +2,37 @@ package com.giacom.tc.demo.v1.controller;
 
 import com.giacom.tc.demo.v1.dto.UserDTO;
 
-public class UserDtoBuilder {
+public class UserDTOBuilder {
 
     private UserDTO dto;
 
-    private UserDtoBuilder() {
+    private UserDTOBuilder() {
     }
 
-    public static UserDtoBuilder create() {
-        UserDtoBuilder builder = new UserDtoBuilder();
+    public static UserDTOBuilder create() {
+        UserDTOBuilder builder = new UserDTOBuilder();
         builder.dto = new UserDTO();
         builder.dto.setName("name");
         builder.dto.setLastName("last name");
         return builder;
     }
 
-    public UserDtoBuilder withName(String name) {
+    public UserDTOBuilder withName(String name) {
         dto.setName(name);
         return this;
     }
 
-    public UserDtoBuilder withId(String id) {
+    public UserDTOBuilder withId(String id) {
         dto.setId(id);
         return this;
     }
 
-    public UserDtoBuilder withLastName(String lastName) {
+    public UserDTOBuilder withLastName(String lastName) {
         dto.setLastName(lastName);
         return this;
     }
 
-    public UserDtoBuilder withAge(int age) {
+    public UserDTOBuilder withAge(int age) {
         dto.setAge(age);
         return this;
     }

@@ -5,6 +5,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.port;
 import static io.restassured.RestAssured.when;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 
 import org.hamcrest.Matchers;
@@ -30,7 +31,7 @@ import com.giacom.tc.demo.v1.dto.UserDTO;
         @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:after_sample_user.sql")
 })
 
-//mvn verify -Pintegration-test -DdbVendor=oracle
+//mvn verify -Pintegration-test -DdbVendor=postgresql
 
 public class UserControllerIT {
 
@@ -69,7 +70,7 @@ public class UserControllerIT {
 
     @Test
     public void whenCreateUserThenReturnNewUser() {
-        UserDTO userDTO = UserDtoBuilder
+        UserDTO userDTO = UserDTOBuilder
                 .create()
                 .withName("Jose")
                 .withLastName("Junior")
@@ -83,10 +84,11 @@ public class UserControllerIT {
                 .then()
                 .statusCode(equalTo(HttpStatus.CREATED.value()))
                 .and()
-                .body("id", Matchers.is(notNullValue()))
+                .body("id", is(notNullValue()))
                 .body("name", equalTo("Jose"))
                 .body("lastName", equalTo("Junior"))
-                .body("age", equalTo(39));
+                .body("age", equalTo(39))
+                .extract().response().prettyPrint();
     }
 
 
@@ -100,7 +102,7 @@ public class UserControllerIT {
 
     @Test
     public void whenUpdateUserThenReturnModifiedUser() {
-        UserDTO userDTO = UserDtoBuilder
+        UserDTO userDTO = UserDTOBuilder
                 .create().withId("5b19b0359b1367bbf61fb1d5")
                 .withName("Dorsey Jr")
                 .withLastName("Hendrix 1")
