@@ -13,7 +13,7 @@
         <assertj-core.version>3.16.1</assertj-core.version>
         <java.version>11</java.version>
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
-        <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <slf4j-api.version>1.7.25</slf4j-api.version>
