@@ -20,7 +20,7 @@
         <slf4j-simple.version>1.7.25</slf4j-simple.version>
         <testcontainers.version>1.14.3</testcontainers.version>
         <ojdbc8.version>12.2.0.1</ojdbc8.version>
-        <postgresql.version>42.2.2</postgresql.version>
+        <postgresql.version>42.4.1</postgresql.version>
     </properties>
 
     <dependencyManagement>
